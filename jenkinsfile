@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from the repository
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Use Maven to build the project
+                sh 'mvn clean install'
+            }
+        }
+
+        // Add more stages as needed (e.g., testing, deployment)
+    }
+
+    post {
+        success {
+            echo 'Build successful! Add post-build actions here.'
+        }
+        failure {
+            echo 'Build failed! Add post-failure actions here.'
+        }
+    }
+}

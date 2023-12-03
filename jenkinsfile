@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Use Maven to build the project
-               mvn clean install'
+               bat 'cd C:\Users\HP\myfirstapp && mvn clean install'
             }
         }
 

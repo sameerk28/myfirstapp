@@ -5,14 +5,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from the repository
-                bat 'git clone https://your-repo-url.git'
+                bat 'git clone https://github.com/sameerk28/myfirstapp.git'
             }
         }
 
         stage('Build') {
             steps {
                 // Use Maven to build the project
-                bat 'cd your-repo-directory && mvn clean install'
+               mvn clean install'
             }
         }
 
